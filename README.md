@@ -228,16 +228,21 @@ Refactors:
 > So I can spend my money,  
 > I want to be able to withdraw from my account
 
-Wrote test for withdrawing 100 from an account with 1000, returned string has balance: 900.00.
+Wrote test for withdrawing 100 from an account with 1000, returned string has balance: 900.00. Red.
 
 - Added `withdraw` method, hardcoded returned string.
 
 Green.
 
-Wrote test for withdrawing 200 from an account with 1000, returned string has balance: 800.00.
+Wrote test for withdrawing 200 from an account with 1000, returned string has balance: 800.00. Red.
 
 - `withdraw` checks if the amount passed is 100, if so it returns the string, if not it returns a different string for withdrawing 200.
 
+Wrote test for withdrawing 100 then 200 from an account with 1000, returned string has balance: 700.00. Red.
+
+`withdraw` implements similar functionality to `deposit` but deducting the amount from the balance.
+
+Green.
 
 <!-- Links -->
 
