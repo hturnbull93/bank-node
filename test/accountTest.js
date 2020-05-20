@@ -81,7 +81,7 @@ describe("Account", () => {
       const account = new Account(spy);
 
       account.deposit(100);
-      expect(spy).to.have.been.calledWith({ credit: 10000 });
+      expect(spy).to.have.been.calledWith({ credit: 10000, balance: 10000 });
     });
   });
 });
