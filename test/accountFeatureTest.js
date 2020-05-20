@@ -1,5 +1,9 @@
+const chai = require("chai");
 const sinon = require("sinon");
-const expect = require("chai").expect;
+const sinonChai = require("sinon-chai");
+const expect = chai.expect;
+chai.use(sinonChai);
+
 const Account = require("../src/account");
 
 describe("Account Feature Test", () => {
@@ -8,7 +12,9 @@ describe("Account Feature Test", () => {
     const dateOne = new Date(2012, 0, 10, 12);
     const dateTwo = new Date(2012, 0, 13, 12);
     const dateThree = new Date(2012, 0, 14, 12);
-    
+
+    let spy = sinon.spy(console, 'log')
+
     const account = new Account();
     
     let clock = sinon.useFakeTimers(dateOne);
@@ -27,7 +33,7 @@ describe("Account Feature Test", () => {
       "10/01/2012 || 1000.00 || || 1000.00 ",
     ].join("\n");
 
-    expect(account.statement()).to.equal(statement);
+    expect(spy).to.have.been.calledWith(statement);
 
     clock.restore(); 
   });
