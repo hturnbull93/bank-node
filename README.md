@@ -12,6 +12,7 @@ It allows you to create an account, deposit funds into it, withdraw funds from i
   - [Requirements](#requirements)
   - [Acceptance criteria](#acceptance-criteria)
 - [Quick Start](#quick-start)
+- [Dependencies](#dependencies)
 - [Development Journal](#development-journal)
   - [Domain Modelling](#domain-modelling)
   - [User Stories](#user-stories)
@@ -68,10 +69,14 @@ You should see something similar to the below:
 ## Screen Preview
 
 ![Screen preview](images/jsconsole-bank.png)
+ -->
 
 ## Dependencies
 
- -->
+Development:
+
+[Mocha] - Testing framework.
+[Chai] - Testing assertion/expectation library.
 
 ## Development Journal
 
@@ -153,7 +158,11 @@ Installed Mocha with `npm install --save-dev mocha`.
 
 Added `node_modules` to `.gitgnore`.
 
+Added `test` dir for mocha.
+
 Specified test script to run mocha.
+
+Installed Chai with `npm install --save-dev chai`.
 
 
 
@@ -161,3 +170,5 @@ Specified test script to run mocha.
 <!-- Links -->
 
 [source]: https://github.com/makersacademy/course/blob/master/individual_challenges/bank_tech_test.md
+[Mocha]: https://mochajs.org/
+[Chai]: https://www.chaijs.com/
