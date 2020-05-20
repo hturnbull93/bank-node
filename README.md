@@ -141,7 +141,7 @@ CRC modelling:
 > So I know how much each deposit was,  
 > I want deposits on my statement to have the credit amount.
 
-- [ ] 4.3
+- [x] 4.3
 
 > As a Customer,  
 > So I know how much each withdrawal was,  
@@ -305,7 +305,7 @@ Green.
 > So I know how much each deposit was,  
 > I want deposits on my statement to have the credit amount.
 
-Wrote a test for constructing a transaction object with a credit value, its `display` method should include that value in the second column of the returned string. Red.
+Wrote a test for constructing a transaction object with an argument object with credit value, its `display` method should include that value in the second column of the returned string. Red.
 
 - `Transaction` constructor takes an object as argument with property credit defaulting to null, which is assigned to `this.credit`.
 - Extracted the helper methods `toPence` and `asPounds` to an object `money`, as methods `pence` and `pounds` in their own module, `src/money.js`.
@@ -320,16 +320,27 @@ Refactors:
 - Converted `render` into a single line arrow function using a ternary operator.
 - Also refactored `dateFormat` into single line arrow function
 
-- [ ] 4.3
+- [x] 4.3
 
 > As a Customer,  
 > So I know how much each withdrawal was,  
 > I want withdrawals on my statement to have the debit amount.
 
-Wrote a test for constructing a transaction object with a credit value of null and second argument for debit, its `display` method should include the debit value in the third column of the returned string. Red.
+Wrote a test for constructing a transaction object passing in argument object with debit, its `display` method should include the debit value in the third column of the returned string. Red.
 
-- `constructor`'s argument obj also has is debit property, defaulting to null, assigned to `this.debit`.
+- `constructor`'s argument obj also has a debit property, defaulting to null, assigned to `this.debit`.
 - `display` interpolates in the third column `render` of `this.debit`.
+
+- [ ] 4.4
+
+> As a Customer,  
+> So can keep track of my balance,  
+> I want transactions on my statement to have the balance amount after the transaction was completed.
+
+Wrote a test for constructing a transaction object passing an argument object with balance property, its `display` method should include the balance value in the fourth column of the returned string. Red.
+
+- `constructor`'s argument obj also has a balance property, defaulting to null, assigned to `this.debit`.
+- `display` interpolates in the fourth column `render` of `this.balance`.
 
 <!-- Links -->
 
