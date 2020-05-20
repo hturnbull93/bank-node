@@ -1,4 +1,4 @@
-var sinon = require("sinon");
+const sinon = require("sinon");
 const expect = require("chai").expect;
 const Account = require("../src/account");
 
