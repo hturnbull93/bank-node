@@ -22,6 +22,11 @@ class Account {
     let debit = money.pence(amount);
     if (debit > this.balance) return "Insufficient funds";
     this.balance -= debit;
+    let withdrawal = new this.transactionClass({
+      debit,
+      balance: this.balance,
+    });
+
     let debitDisplay = money.pounds(debit);
     let balanceDisplay = money.pounds(this.balance);
     return `${debitDisplay} withdrawn. Current balance: ${balanceDisplay}`;

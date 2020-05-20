@@ -361,6 +361,9 @@ Wrote a test that `deposit` calls for a new `Transaction`. Red,
 
 Green.
 
+Wrote a test that `withdraw` calls for a new `Transaction`. Red,
+
+- `deposit` calls for a new `this.transactionClass` passing in an object with the credit and balance.
 
 <!-- Links -->
 
