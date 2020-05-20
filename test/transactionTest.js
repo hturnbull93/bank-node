@@ -1,5 +1,6 @@
 const sinon = require("sinon");
 const expect = require("chai").expect;
+const Transaction = require("../src/transaction");
 
 describe("Transaction", () => {
   describe(".display", () => {
