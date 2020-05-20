@@ -53,6 +53,15 @@ describe("Account", () => {
         "200.00 withdrawn. Current balance: 800.00"
       );
     });
+
+    it("100 then 200, return string has balance: 700.00", () => {
+      const account = accountWith1000Deposited();
+      account.withdraw(100);
+
+      expect(account.withdraw(200)).to.equal(
+        "200.00 withdrawn. Current balance: 700.00"
+      );
+    });
   });
 });
 
