@@ -374,9 +374,10 @@ Now to pass the feature test.
 - `constructor` initialised `this.transactionHistory` as an empty array.
 - `_addTransaction` unshifts the `Transaction` it creates onto `this.transactionHistory`.
 - The `Account` `statement` method includes a constant `STATEMENT_HEADER` assigned with the header string for the statement, ending in newline.
-- It then assigns `statementRows` by mapping through the `transactionHistory`, calling `display` on each transaction.
+- It then assigns `statementRows` by mapping through the `transactionHistory`, returning the `display` call on each transaction.
 - It then returns the `STATEMENT_HEADER` concatenated with `statementRows` joined with newline characters.
 
+Green.
 
 <!-- Links -->
 

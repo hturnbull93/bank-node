@@ -7,6 +7,7 @@ class Account {
 
     this.balance = STARTING_BALANCE;
     this.transactionClass = transactionClass;
+    this.transactionHistory = [];
   }
 
   deposit(amount) {
@@ -29,8 +30,16 @@ class Account {
     return `${debitDisplay} withdrawn. Current balance: ${balanceDisplay}`;
   }
 
+  statement() {
+    const STATEMENT_HEADER = "date || credit || debit || balance \n";
+    let statementRows = this.transactionHistory.map((transaction) => {
+      return transaction.display();
+    });
+    return STATEMENT_HEADER + statementRows.join("\n")
+  }
+
   _addTransaction(argObj) {
-    new this.transactionClass(argObj);
+    this.transactionHistory.unshift(new this.transactionClass(argObj));
   }
 }
 
