@@ -244,6 +244,14 @@ Wrote test for withdrawing 100 then 200 from an account with 1000, returned stri
 
 Green.
 
+- [ ] 3.1
+
+> As a Bank Manager,  
+> So we don't go out of pocket,  
+> I want withdrawals to only be allowed to occur if the customer has sufficient funds
+
+Wrote test for withdrawing 1500 from an account with 1000, string returned should say "Insufficient funds". Red.
+
 <!-- Links -->
 
 [source]: https://github.com/makersacademy/course/blob/master/individual_challenges/bank_tech_test.md
