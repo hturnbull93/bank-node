@@ -202,6 +202,12 @@ Wrote test for `deposit` method taking 200 then 100 results in a string showing 
 - Added `constructor` to `Account` initialising `balance` with constant `STARTING_BALANCE` set as 0.
 - `deposit` adds amount to balance, then interpolates the amount and new balance into a returned string.
 
+Green.
+
+Wrote test for `deposit` method taking 10.50, should in a string showing deposited 10.50 and balance of 10.50. Red.
+
+The balance should probably be stored as pence, rather than as a float, but it needs to be display at two decimal places as if it were pounds and pence.
+
 <!-- Links -->
 
 [source]: https://github.com/makersacademy/course/blob/master/individual_challenges/bank_tech_test.md
