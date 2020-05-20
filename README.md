@@ -18,6 +18,7 @@ It allows you to create an account, deposit funds into it, withdraw funds from i
   - [User Stories](#user-stories)
   - [Set up](#set-up)
   - [Deposits](#deposits)
+  - [Withdrawals](#withdrawals)
 
 ## Spec
 
@@ -218,6 +219,16 @@ Refactors:
 
 - Extracted the operations used to convert to two decimal places to a separate private helper method, `_asPounds`.
 - Extracted the operation used to convert the amount to pence into a new private helper method, `_toPence`.
+
+### Withdrawals
+
+- [x] 3
+
+> As a Customer,  
+> So I can spend my money,  
+> I want to be able to withdraw from my account
+
+Wrote test for withdrawing 100 from an account with 1000, returned string has balance: 900.00.
 
 <!-- Links -->
 

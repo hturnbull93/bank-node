@@ -31,8 +31,19 @@ describe("Account", () => {
     it("returns str with balance: 10.50 when passed 10.50", () => {
       const account = new Account();
 
-      expect(account.deposit(10.50)).to.equal(
+      expect(account.deposit(10.5)).to.equal(
         "10.50 deposited. Current balance: 10.50"
+      );
+    });
+  });
+
+  describe(".withdraw (account has 1000 deposited already)", () => {
+    it("reduces balance by 100 when passed 100", () => {
+      let account = new Account();
+      account.deposit(1000);
+
+      expect(account.withdraw(100)).toEqual(
+        "100.00 withdrawn. Current balance: 900.00"
       );
     });
   });
