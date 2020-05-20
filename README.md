@@ -342,6 +342,10 @@ Wrote a test for constructing a transaction object passing an argument object wi
 - `constructor`'s argument obj also has a balance property, defaulting to null, assigned to `this.debit`.
 - `display` interpolates in the fourth column `render` of `this.balance`.
 
+Refactors:
+
+- The display method has a lot of duplication or columns in a long string interpolation, which also doesn't read very well any way you try to format it. Changed this to an array with each of the elements as a `render` call, joined with a delimiter of "|| " for the columns.
+- Also prepend an underscore to `render` and `dateFormat` as they should be treated as private methods.
 <!-- Links -->
 
 [source]: https://github.com/makersacademy/course/blob/master/individual_challenges/bank_tech_test.md

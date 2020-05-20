@@ -10,14 +10,17 @@ class Transaction {
   }
 
   display() {
-    return `${this.dateFormat()}|| ${this.render(this.credit)}|| ${this.render(
-      this.debit
-    )}|| ${this.render(this.balance)}`;
+    return [
+      this.dateFormat(),
+      this.render(this.credit),
+      this.render(this.debit),
+      this.render(this.balance),
+    ].join("|| ");
   }
 
   dateFormat = () => moment(this.date).format("DD/MM/YYYY ");
 
-  render = item => item != null ? `${money.pounds(item)} ` : "";
+  render = (item) => (item != null ? `${money.pounds(item)} ` : "");
 }
 
 module.exports = Transaction;
