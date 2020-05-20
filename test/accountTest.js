@@ -1,4 +1,5 @@
 const expect = require("chai").expect;
+const Account = require('../src/account');
 
 describe("Account", () => {
   describe(".deposit", () => {
