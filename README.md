@@ -17,6 +17,7 @@ It allows you to create an account, deposit funds into it, withdraw funds from i
   - [Domain Modelling](#domain-modelling)
   - [User Stories](#user-stories)
   - [Set up](#set-up)
+  - [Deposits](#deposits)
 
 ## Spec
 
@@ -75,7 +76,7 @@ You should see something similar to the below:
 
 Development:
 
-[Mocha] - Testing framework.
+[Mocha] - Testing runner framework.
 [Chai] - Testing assertion/expectation library.
 
 ## Development Journal
@@ -164,7 +165,30 @@ Specified test script to run mocha.
 
 Installed Chai with `npm install --save-dev chai`.
 
+That's enough to get started.
 
+### Deposits
+
+- [ ] 1
+
+> As a Bank Manager,  
+> So that we only take customers money,  
+> I want accounts to start with balance 0
+
+- [ ] 2
+
+> As a Customer,  
+> So I can keep my money safe,  
+> I want to be able to deposit into my account
+
+In `test/accountTest.js` wrote a test for an `Account` class, with a `deposit` method taking 100 results in a string showing deposited 100 and balance of 100. Red.
+
+In `src/account.js`:
+
+- Added `Account` class.
+- Added `deposit` function that returns the required string hardcoded.
+
+Green.
 
 
 <!-- Links -->
