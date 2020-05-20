@@ -1,7 +1,12 @@
 class Account {
-   deposit(amount) {
-    if (amount === 100) return "100.00 deposited. Current balance: 100.00";
-    else return "200.00 deposited. Current balance: 200.00";
+  constructor() {
+    const STARTING_BALANCE = 0;
+
+    this.balance = STARTING_BALANCE;
+  }
+  deposit(amount) {
+    this.balance += amount;
+    return `${amount}.00 deposited. Current balance: ${this.balance}.00`;
   }
 }
 

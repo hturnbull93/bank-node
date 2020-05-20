@@ -199,6 +199,8 @@ Green.
 
 Wrote test for `deposit` method taking 200 then 100 results in a string showing deposited 100.00 and balance of 300.00. Red.
 
+- Added `constructor` to `Account` initialising `balance` with constant `STARTING_BALANCE` set as 0.
+- `deposit` adds amount to balance, then interpolates the amount and new balance into a returned string.
 
 <!-- Links -->
 
