@@ -110,7 +110,7 @@ describe("Account", () => {
       const account = new Account(transactionSpy, printerSpy);
 
       account.statement()
-      expect(spiedFunction).to.have.been.called();
+      expect(spiedFunction).to.have.been.called;
     });
   });
 });
