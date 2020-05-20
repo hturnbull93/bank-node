@@ -129,7 +129,7 @@ CRC modelling:
 > So I can keep on top of my finances,  
 > I want to be able to print my account statement
 
-- [ ] 4.1
+- [x] 4.1
 
 > As a Customer,  
 > So I know when each transaction happened,  
@@ -281,7 +281,7 @@ Part of solving the feature is to implement `Transaction`s.
 
 ### Transactions
 
-- [ ] 4.1
+- [x] 4.1
 
 > As a Customer,  
 > So I know when each transaction happened,  
@@ -298,6 +298,14 @@ In `src/transaction.js`:
 - Required `Transaction` into `transactionTest.js`.
 
 Green.
+
+- [ ] 4.2
+
+> As a Customer,  
+> So I know how much each deposit was,  
+> I want deposits on my statement to have the credit amount.
+
+Wrote a test for constructing a transaction object with a credit value, its `display` method should include that value in the second column of the returned string. Red.
 
 <!-- Links -->
 
