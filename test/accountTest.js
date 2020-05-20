@@ -1,4 +1,9 @@
-const expect = require("chai").expect;
+const chai = require("chai");
+const sinon = require("sinon");
+const sinonChai = require("sinon-chai");
+const expect = chai.expect;
+chai.use(sinonChai);
+
 const Account = require("../src/account");
 
 describe("Account", () => {
@@ -67,6 +72,16 @@ describe("Account", () => {
       const account = accountWith1000Deposited();
 
       expect(account.withdraw(1500)).to.equal("Insufficient funds");
+    });
+  });
+
+  describe("uses Transaction class", () => {
+    it("deposit calls for new Transaction", () => {
+      let spy = sinon.spy()
+      const account = new Account(spy);
+
+      account.deposit(100);
+      expect(spy).to.have.been.calledWith({ credit: 10000 });
     });
   });
 });
