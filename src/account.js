@@ -3,7 +3,7 @@ const Transaction = require("./transaction");
 const Printer = require("./printer");
 
 class Account {
-  constructor(transactionClass = Transaction, printer = new Printer) {
+  constructor(transactionClass = Transaction, printer = new Printer()) {
     const STARTING_BALANCE = 0;
 
     this.balance = STARTING_BALANCE;
@@ -33,7 +33,7 @@ class Account {
   }
 
   statement() {
-    this.printer.printStatement(this.transactionHistory)
+    this.printer.printStatement(this.transactionHistory);
   }
 
   _addTransaction(argObj) {
