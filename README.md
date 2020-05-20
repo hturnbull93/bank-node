@@ -193,6 +193,13 @@ Green.
 
 Wrote test for `deposit` method taking 200 results in a string showing deposited 200.00 and balance of 200.00. Red.
 
+- `deposit` now checks for the amount, then if it is 200, return the relevant "200.00" string, else return the "100.00" string.
+
+Green.
+
+Wrote test for `deposit` method taking 200 then 100 results in a string showing deposited 100.00 and balance of 300.00. Red.
+
+
 <!-- Links -->
 
 [source]: https://github.com/makersacademy/course/blob/master/individual_challenges/bank_tech_test.md
