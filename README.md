@@ -270,6 +270,7 @@ The feature test I want to write needs to be able to have the date mocked. For t
 
 Sinon is installed with `npm install --save-dev sinon`
 
+In `test/accountFeatureTest.js` wrote a feature test similar to the above acceptance criteria, using sinon fake timers to mock the date. Red.
 
 <!-- Links -->
 
