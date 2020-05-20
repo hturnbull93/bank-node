@@ -33,8 +33,10 @@ describe("Account Feature Test", () => {
       "10/01/2012 || 1000.00 || || 1000.00 ",
     ].join("\n");
 
+    account.statement()
     expect(spy).to.have.been.calledWith(statement);
 
+    console.log.restore()
     clock.restore(); 
   });
 });
