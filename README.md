@@ -21,6 +21,7 @@ It allows you to create an account, deposit funds into it, withdraw funds from i
   - [Withdrawals](#withdrawals)
   - [Statement](#statement)
   - [Transactions](#transactions)
+  - [Back to the Statement](#back-to-the-statement)
 
 ## Spec
 
@@ -86,6 +87,7 @@ Development:
 [Mocha] - Testing runner framework.
 [Chai] - Testing assertion/expectation library.
 [Sinon] - Testing spy/stub/mock library.
+[Sinon-Chai] - Custom Chai assertions for the Sinon library.
 
 ## Development Journal
 
@@ -346,10 +348,16 @@ Refactors:
 
 - The display method has a lot of duplication or columns in a long string interpolation, which also doesn't read very well any way you try to format it. Changed this to an array with each of the elements as a `render` call, joined with a delimiter of "|| " for the columns.
 - Also prepend an underscore to `render` and `dateFormat` as they should be treated as private methods.
+
+### Back to the Statement
+
+To write a test that `deposit` calls for a new `Transaction`, the sinon-chai library is needed, installed with `npm install --save-dev sinon-chai`.
+
 <!-- Links -->
 
 [source]: https://github.com/makersacademy/course/blob/master/individual_challenges/bank_tech_test.md
 [Mocha]: https://mochajs.org/
 [Chai]: https://www.chaijs.com/
 [Sinon]: https://sinonjs.org/
+[Sinon-Chai]: https://www.chaijs.com/plugins/sinon-chai/
 [Moment]: https://momentjs.com/

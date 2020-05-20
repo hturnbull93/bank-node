@@ -12,7 +12,8 @@
   "devDependencies": {
     "chai": "^4.2.0",
     "mocha": "^7.1.2",
-    "sinon": "^9.0.2"
+    "sinon": "^9.0.2",
+    "sinon-chai": "^3.5.0"
   },
   "dependencies": {
     "moment": "^2.26.0"
