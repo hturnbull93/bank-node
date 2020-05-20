@@ -20,6 +20,7 @@ It allows you to create an account, deposit funds into it, withdraw funds from i
   - [Deposits](#deposits)
   - [Withdrawals](#withdrawals)
   - [Statement](#statement)
+  - [Transactions](#transactions)
 
 ## Spec
 
@@ -271,6 +272,18 @@ The feature test I want to write needs to be able to have the date mocked. For t
 Sinon is installed with `npm install --save-dev sinon`
 
 In `test/accountFeatureTest.js` wrote a feature test similar to the above acceptance criteria, using sinon fake timers to mock the date. Red.
+
+Part of solving the feature is to implement `Transaction`s.
+
+### Transactions
+
+- [ ] 4.1
+
+> As a Customer,  
+> So I know when each transaction happened,  
+> I want transactions on my statement to have the date
+
+In `test/transactionTest.js` wrote a test for the `display` method of the `Transaction` class to return a formatted string, with the formatted date in the first column. Red.
 
 <!-- Links -->
 
