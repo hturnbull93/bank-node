@@ -104,10 +104,10 @@ Production:
 
 Development:
 
-[Mocha] - Testing runner framework.
-[Chai] - Testing assertion/expectation library.
-[Sinon] - Testing spy/stub/mock library.
-[Sinon-Chai] - Custom Chai assertions for the Sinon library.
+[Mocha] - Testing runner framework.  
+[Chai] - Testing assertion/expectation library.  
+[Sinon] - Testing spy/stub/mock library.  
+[Sinon-Chai] - Custom Chai assertions for the Sinon library.  
 
 ## Development Journal
 
