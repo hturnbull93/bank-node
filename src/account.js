@@ -33,7 +33,7 @@ class Account {
   }
 
   statement() {
-    return this.printer.printStatement(this.transactionHistory)
+    this.printer.printStatement(this.transactionHistory)
   }
 
   _addTransaction(argObj) {
