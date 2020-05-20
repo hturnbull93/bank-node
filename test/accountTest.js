@@ -83,6 +83,15 @@ describe("Account", () => {
       account.deposit(100);
       expect(spy).to.have.been.calledWith({ credit: 10000, balance: 10000 });
     });
+    
+    it("withdraw calls for new Transaction", () => {
+      let spy = sinon.spy()
+      const account = new Account(spy);
+      account.deposit(100);
+      
+      account.withdraw(100);
+      expect(spy).to.have.been.calledWith({ debit: 10000, balance: 0 });
+    });
   });
 });
 
