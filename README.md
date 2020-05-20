@@ -417,6 +417,9 @@ Rather than returning a concatenated string, the printer should log it to the co
 - Adjusted the feature test to spy on `console`'s `log` method, expecting it to be called with the prepared `statement`.
 - `printStatement` console logs instead of returning.
 - `statement` no longer returns, it just calls `printer.printStatement`.
+- Added a test for `Printer.printStatement` to print the statement header and result of array elements display calls on newlines.
+- Extracted a method `_transactionMessage` from withdraw and amount to handle the conversion of the credit/debit amount and balance for input into the transaction message string.
+
 
 <!-- Links -->
 

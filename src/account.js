@@ -16,9 +16,7 @@ class Account {
     let credit = money.pence(amount);
     this.balance += credit;
     this._addTransaction({ credit, balance: this.balance });
-    let creditDisplay = money.pounds(credit);
-    let balanceDisplay = money.pounds(this.balance);
-    return `${creditDisplay} deposited. Current balance: ${balanceDisplay}`;
+    return this._transactionMessage(credit, "deposited");
   }
 
   withdraw(amount) {
@@ -27,9 +25,7 @@ class Account {
     this.balance -= debit;
     this._addTransaction({ debit, balance: this.balance });
 
-    let debitDisplay = money.pounds(debit);
-    let balanceDisplay = money.pounds(this.balance);
-    return `${debitDisplay} withdrawn. Current balance: ${balanceDisplay}`;
+    return this._transactionMessage(debit, "withdrawn");
   }
 
   statement() {
@@ -38,6 +34,12 @@ class Account {
 
   _addTransaction(argObj) {
     this.transactionHistory.unshift(new this.transactionClass(argObj));
+  }
+
+  _transactionMessage(credit, phrase) {
+    let creditDisplay = money.pounds(credit);
+    let balanceDisplay = money.pounds(this.balance);
+    return `${creditDisplay} ${phrase}. Current balance: ${balanceDisplay}`;
   }
 }
 
