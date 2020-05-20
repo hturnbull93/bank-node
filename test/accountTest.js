@@ -77,20 +77,40 @@ describe("Account", () => {
 
   describe("uses Transaction class", () => {
     it("deposit calls for new Transaction", () => {
-      let spy = sinon.spy()
-      const account = new Account(spy);
+      let transactionSpy = sinon.spy();
+      const account = new Account(transactionSpy);
 
       account.deposit(100);
-      expect(spy).to.have.been.calledWith({ credit: 10000, balance: 10000 });
+      expect(transactionSpy).to.have.been.calledWith({
+        credit: 10000,
+        balance: 10000,
+      });
     });
-    
+
     it("withdraw calls for new Transaction", () => {
-      let spy = sinon.spy()
-      const account = new Account(spy);
+      let transactionSpy = sinon.spy();
+      const account = new Account(transactionSpy);
       account.deposit(100);
-      
+
       account.withdraw(100);
-      expect(spy).to.have.been.calledWith({ debit: 10000, balance: 0 });
+      expect(transactionSpy).to.have.been.calledWith({
+        debit: 10000,
+        balance: 0,
+      });
+    });
+  });
+
+  describe("uses Printer class", () => {
+    it("statement calls printer.printStatement", () => {
+      let printerSpy = {
+        printStatement: () => {},
+      };
+      let spiedFunction = sinon.spy(printerSpy, "printStatement");
+      let transactionSpy;
+      const account = new Account(transactionSpy, printerSpy);
+
+      account.statement()
+      expect(spiedFunction).to.have.been.called();
     });
   });
 });

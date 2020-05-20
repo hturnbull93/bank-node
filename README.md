@@ -22,6 +22,7 @@ It allows you to create an account, deposit funds into it, withdraw funds from i
   - [Statement](#statement)
   - [Transactions](#transactions)
   - [Back to the Statement](#back-to-the-statement)
+  - [Extracting a Printer](#extracting-a-printer)
 
 ## Spec
 
@@ -378,6 +379,10 @@ Now to pass the feature test.
 - It then returns the `STATEMENT_HEADER` concatenated with `statementRows` joined with newline characters.
 
 Green.
+
+### Extracting a Printer
+
+Wrote a test that `statement` calls `Printer.printStatement`. Red.
 
 <!-- Links -->
 
