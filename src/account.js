@@ -7,11 +7,9 @@ class Account {
   deposit(amount) {
     let credit = this._toPence(amount);
     this.balance += credit;
-    return `${
-      this._asPounds(credit)
-    } deposited. Current balance: ${
-      this._asPounds(this.balance)
-    }`;
+    let creditDisplay = this._asPounds(credit);
+    let balanceDisplay = this._asPounds(this.balance);
+    return `${creditDisplay} deposited. Current balance: ${balanceDisplay}`;
   }
 
   _asPounds(pence) {
