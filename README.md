@@ -232,6 +232,13 @@ Wrote test for withdrawing 100 from an account with 1000, returned string has ba
 
 - Added `withdraw` method, hardcoded returned string.
 
+Green.
+
+Wrote test for withdrawing 200 from an account with 1000, returned string has balance: 800.00.
+
+- `withdraw` checks if the amount passed is 100, if so it returns the string, if not it returns a different string for withdrawing 200.
+
+
 <!-- Links -->
 
 [source]: https://github.com/makersacademy/course/blob/master/individual_challenges/bank_tech_test.md

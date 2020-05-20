@@ -13,8 +13,9 @@ class Account {
     return `${creditDisplay} deposited. Current balance: ${balanceDisplay}`;
   }
 
-  withdraw() {
-    return "100.00 withdrawn. Current balance: 900.00";
+  withdraw(amount) {
+    if (amount === 100) return "100.00 withdrawn. Current balance: 900.00";
+    else return "200.00 withdrawn. Current balance: 800.00";
   }
 
   _asPounds(pence) {
