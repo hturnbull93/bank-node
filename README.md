@@ -353,6 +353,15 @@ Refactors:
 
 To write a test that `deposit` calls for a new `Transaction`, the sinon-chai library is needed, installed with `npm install --save-dev sinon-chai`.
 
+Wrote a test that `deposit` calls for a new `Transaction`. Red,
+
+- The `Account` class can have `Transaction` injected into it.
+- The `constructor` takes an argument `transactionClass` defaulting to `Transaction`, assigned to `this.transactionClass`.
+- `deposit` calls for a new `this.transactionClass` passing in an object with the credit and balance.
+
+Green.
+
+
 <!-- Links -->
 
 [source]: https://github.com/makersacademy/course/blob/master/individual_challenges/bank_tech_test.md
