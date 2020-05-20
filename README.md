@@ -94,7 +94,7 @@ You should see something similar to the below:
 
 ## Screen Preview
 
-![Screen preview](images/bank-node-repl.png)
+![Screen preview](images/Bank-node-repl.png)
 
 ## Dependencies
 
