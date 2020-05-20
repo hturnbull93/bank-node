@@ -11,19 +11,14 @@ describe("Printer", () => {
     let spy = sinon.spy(console, "log");
     const printer = new Printer();
 
-    let hello = {
-      display: () => "Hello",
-    };
-    let world = {
-      display: () => "World",
-    };
 
     let result = ["date || credit || debit || balance ", "Hello", "World"].join(
       "\n"
     );
 
-    printer.printStatement([hello, world]);
+    printer.printStatement(["Hello", "World"], item => item);
 
     expect(spy).to.have.been.calledWith(result);
+    console.log.restore();
   });
 });

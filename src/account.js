@@ -28,7 +28,9 @@ class Account {
   }
 
   statement() {
-    this.printer.printStatement(this.transactionHistory);
+    this.printer.printStatement(this.transactionHistory, (transaction) => {
+      return transaction.display();
+    });
   }
 
   _addTransaction(argObj) {

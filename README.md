@@ -52,6 +52,7 @@ date || credit || debit || balance
 ## Quick Start
 
 1. Clone this repo.
+
 2. Install dependencies with:
 
    ```shell
@@ -417,6 +418,7 @@ Rather than returning a concatenated string, the printer should log it to the co
 - `statement` no longer returns, it just calls `printer.printStatement`.
 - Added a test for `Printer.printStatement` to print the statement header and result of array elements display calls on newlines.
 - Extracted a method `_transactionMessage` from withdraw and amount to handle the conversion of the credit/debit amount and balance for input into the transaction message string.
+- Extracted from the `printStatement` the requirement to know about a `display` method, instead it accepts a callback as second argument, which it calls when mapping through the passed array.
 
 
 <!-- Links -->
