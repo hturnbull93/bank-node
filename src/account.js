@@ -12,7 +12,7 @@ class Account {
   deposit(amount) {
     let credit = money.pence(amount);
     this.balance += credit;
-    let deposit = new this.transactionClass({ credit, balance: this.balance });
+    this._addTransaction({ credit, balance: this.balance });
     let creditDisplay = money.pounds(credit);
     let balanceDisplay = money.pounds(this.balance);
     return `${creditDisplay} deposited. Current balance: ${balanceDisplay}`;
@@ -22,14 +22,15 @@ class Account {
     let debit = money.pence(amount);
     if (debit > this.balance) return "Insufficient funds";
     this.balance -= debit;
-    let withdrawal = new this.transactionClass({
-      debit,
-      balance: this.balance,
-    });
+    this._addTransaction({ debit, balance: this.balance });
 
     let debitDisplay = money.pounds(debit);
     let balanceDisplay = money.pounds(this.balance);
     return `${debitDisplay} withdrawn. Current balance: ${balanceDisplay}`;
+  }
+
+  _addTransaction(argObj) {
+    new this.transactionClass(argObj);
   }
 }
 

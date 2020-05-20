@@ -363,7 +363,20 @@ Green.
 
 Wrote a test that `withdraw` calls for a new `Transaction`. Red,
 
-- `deposit` calls for a new `this.transactionClass` passing in an object with the credit and balance.
+- `withdraw` calls for a new `this.transactionClass` passing in an object with the credit and balance.
+
+Refactor:
+
+- As the behaviour in `deposit` and `withdraw` is similar, extracted a private helper method `_addTransaction`, which `deposit` and `withdraw` call.
+
+Now to pass the feature test.
+
+- `constructor` initialised `this.transactionHistory` as an empty array.
+- `_addTransaction` unshifts the `Transaction` it creates onto `this.transactionHistory`.
+- The `Account` `statement` method includes a constant `STATEMENT_HEADER` assigned with the header string for the statement, ending in newline.
+- It then assigns `statementRows` by mapping through the `transactionHistory`, calling `display` on each transaction.
+- It then returns the `STATEMENT_HEADER` concatenated with `statementRows` joined with newline characters.
+
 
 <!-- Links -->
 
