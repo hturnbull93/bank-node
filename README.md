@@ -149,6 +149,10 @@ CRC modelling:
 
 Initialised node with `npm init`.
 
+Installed Mocha with `npm install --save-dev mocha`.
+
+Added `node_modules` to `.gitgnore`.
+
 
 
 
