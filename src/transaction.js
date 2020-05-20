@@ -11,16 +11,16 @@ class Transaction {
 
   display() {
     return [
-      this.dateFormat(),
-      this.render(this.credit),
-      this.render(this.debit),
-      this.render(this.balance),
+      this._dateFormat(),
+      this._render(this.credit),
+      this._render(this.debit),
+      this._render(this.balance),
     ].join("|| ");
   }
 
-  dateFormat = () => moment(this.date).format("DD/MM/YYYY ");
+  _dateFormat = () => moment(this.date).format("DD/MM/YYYY ");
 
-  render = (item) => (item != null ? `${money.pounds(item)} ` : "");
+  _render = (item) => (item != null ? `${money.pounds(item)} ` : "");
 }
 
 module.exports = Transaction;
