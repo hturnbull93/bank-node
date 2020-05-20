@@ -153,6 +153,8 @@ Installed Mocha with `npm install --save-dev mocha`.
 
 Added `node_modules` to `.gitgnore`.
 
+Specified test script to run mocha.
+
 
 
 
