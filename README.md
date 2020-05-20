@@ -91,13 +91,13 @@ CRC modelling:
 
 ### User Stories
 
-- [ ] 1
+- [x] 1
 
 > As a Bank Manager,  
 > So that we only take customers money,  
 > I want accounts to start with balance 0
 
-- [ ] 2
+- [x] 2
 
 > As a Customer,  
 > So I can keep my money safe,  
@@ -169,13 +169,13 @@ That's enough to get started.
 
 ### Deposits
 
-- [ ] 1
+- [x] 1
 
 > As a Bank Manager,  
 > So that we only take customers money,  
 > I want accounts to start with balance 0
 
-- [ ] 2
+- [x] 2
 
 > As a Customer,  
 > So I can keep my money safe,  
