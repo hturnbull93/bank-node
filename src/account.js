@@ -24,7 +24,6 @@ class Account {
     if (debit > this.balance) return "Insufficient funds";
     this.balance -= debit;
     this._addTransaction({ debit, balance: this.balance });
-
     return this._transactionMessage(debit, "withdrawn");
   }
 

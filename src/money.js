@@ -1,10 +1,10 @@
 const money = {
-  pounds: pence => {
+  pounds: (pence) => {
     return parseFloat(pence / 100).toFixed(2);
   },
-  pence: amount => {
+  pence: (amount) => {
     return amount * 100;
-  }
-}
+  },
+};
 
-module.exports = money
+module.exports = money;
