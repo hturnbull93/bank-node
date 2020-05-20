@@ -230,6 +230,8 @@ Refactors:
 
 Wrote test for withdrawing 100 from an account with 1000, returned string has balance: 900.00.
 
+- Added `withdraw` method, hardcoded returned string.
+
 <!-- Links -->
 
 [source]: https://github.com/makersacademy/course/blob/master/individual_challenges/bank_tech_test.md
