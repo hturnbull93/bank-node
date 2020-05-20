@@ -11,6 +11,7 @@ It allows you to create an account, deposit funds into it, withdraw funds from i
 - [Spec](#spec)
   - [Requirements](#requirements)
   - [Acceptance criteria](#acceptance-criteria)
+- [Quick Start](#quick-start)
 - [Development Journal](#development-journal)
   - [Domain Modelling](#domain-modelling)
   - [User Stories](#user-stories)
@@ -40,8 +41,10 @@ date || credit || debit || balance
 10/01/2012 || 1000.00 || || 1000.00
 ```
 
-<!-- 
 ## Quick Start
+
+Coming soon.
+<!--
 1. Clone this repo.
 2. Open `SpecRunner.html` in your browser.
 3. Inspect the tests.
@@ -68,10 +71,8 @@ You should see something similar to the below:
 
 ## Dependencies
 
-[Jasmine] is used as a test framework.
-
-[Moment.js] is used to help convert date objects into formatted strings. It is quite a small library when minified, and I have included a local copy in `src/moment.min.js`.
  -->
+
 ## Development Journal
 
 ### Domain Modelling
