@@ -252,6 +252,8 @@ Green.
 
 Wrote test for withdrawing 1500 from an account with 1000, string returned should say "Insufficient funds". Red.
 
+- Added guard clause to check if the amount to be withdrawn is greater than the current balance, if so return the string.
+
 <!-- Links -->
 
 [source]: https://github.com/makersacademy/course/blob/master/individual_challenges/bank_tech_test.md
