@@ -77,6 +77,10 @@ You should see something similar to the below:
 
 ## Dependencies
 
+Production:
+
+[Moment] - Time formatting library.
+
 Development:
 
 [Mocha] - Testing runner framework.
@@ -285,9 +289,20 @@ Part of solving the feature is to implement `Transaction`s.
 
 In `test/transactionTest.js` wrote a test for the `display` method of the `Transaction` class to return a formatted string, with the formatted date in the first column. Red.
 
+In `src/transaction.js`:
+
+- `Transaction` class, with `constructor` setting `this.date` with a new instance of `Date`.
+- `dateFormat` uses the moment library to format the date as "dd/mm/yyyy" - - Manually formatting dates in JavaScript is a bit more fiddly compared to Ruby, moment is installed as a dependency with `npm install --save moment`.
+- `display` method returns a string interpolated with the `dateFormat` returned value.
+- Exported `Transaction` as a module.
+- Required `Transaction` into `transactionTest.js`.
+
+Green.
+
 <!-- Links -->
 
 [source]: https://github.com/makersacademy/course/blob/master/individual_challenges/bank_tech_test.md
 [Mocha]: https://mochajs.org/
 [Chai]: https://www.chaijs.com/
 [Sinon]: https://sinonjs.org/
+[Moment]: https://momentjs.com/
