@@ -214,6 +214,14 @@ The balance should probably be stored as pence, rather than as a float, but it n
 - Similarly let `displayBalance` convert to 2 decimal places.
 - Then interpolate `displayCredit` and `displayBalance` into the returned string.
 
+Green.
+
+Refactors:
+
+- Extracted the operations used in `displayCredit` and `displayBalance` to a separate method, `asPounds`.
+- Extracted the operation used to convert the amount to pence into a new method, `toPence`.
+- Moved the extracted methods to their own file, `src/conversion.js`.
+
 <!-- Links -->
 
 [source]: https://github.com/makersacademy/course/blob/master/individual_challenges/bank_tech_test.md

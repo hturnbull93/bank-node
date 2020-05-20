@@ -5,13 +5,17 @@ class Account {
     this.balance = STARTING_BALANCE;
   }
   deposit(amount) {
-    let credit = amount * 100;
+    let credit = this.toPence(amount);
     this.balance += credit
     return `${
       parseFloat(credit / 100).toFixed(2)
     } deposited. Current balance: ${
       parseFloat(this.balance / 100).toFixed(2)
     }`;
+  }
+
+  toPence(amount) {
+    return amount * 100;
   }
 }
 
