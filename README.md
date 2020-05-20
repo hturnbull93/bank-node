@@ -187,9 +187,11 @@ In `src/account.js`:
 
 - Added `Account` class.
 - Added `deposit` function that returns the required string hardcoded.
+- Export `Account` for require elsewhere.
 
 Green.
 
+Wrote test for `deposit` method taking 200 results in a string showing deposited 200.00 and balance of 200.00. Red.
 
 <!-- Links -->
 

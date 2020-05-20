@@ -1,5 +1,5 @@
 const expect = require("chai").expect;
-const Account = require('../src/account');
+const Account = require("../src/account");
 
 describe("Account", () => {
   describe(".deposit", () => {
@@ -8,6 +8,14 @@ describe("Account", () => {
 
       expect(account.deposit(100)).to.equal(
         "100.00 deposited. Current balance: 100.00"
+      );
+    });
+
+    it("returns str with balance: 200 when passed 200", () => {
+      const account = new Account();
+
+      expect(account.deposit(200)).toEqual(
+        "200.00 deposited. Current balance: 200.00"
       );
     });
   });
