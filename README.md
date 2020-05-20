@@ -135,7 +135,7 @@ CRC modelling:
 > So I know when each transaction happened,  
 > I want transactions on my statement to have the date
 
-- [ ] 4.2
+- [x] 4.2
 
 > As a Customer,  
 > So I know how much each deposit was,  
@@ -299,13 +299,27 @@ In `src/transaction.js`:
 
 Green.
 
-- [ ] 4.2
+- [x] 4.2
 
 > As a Customer,  
 > So I know how much each deposit was,  
 > I want deposits on my statement to have the credit amount.
 
 Wrote a test for constructing a transaction object with a credit value, its `display` method should include that value in the second column of the returned string. Red.
+
+- `Transaction` constructor takes an object as argument with property credit defaulting to null, which is assigned to `this.credit`.
+- Extracted the helper methods `toPence` and `asPounds` to an object `money`, as methods `pence` and `pounds` in their own module, `src/money.js`.
+- Require `money` into `transaction`.
+- Added `render` method which takes an item, then if that is not null returns `money.pounds` passing in the item, concatenated with a trailing space, else returns an empty string.
+- `display` interpolates `render` of `this.credit`.
+
+Green.
+
+Refactors:
+
+- Converted `render` into a single line arrow function using a ternary operator.
+- Also refactored `dateFormat` into single line arrow function
+
 
 <!-- Links -->
 

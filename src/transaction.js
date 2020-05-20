@@ -11,14 +11,9 @@ class Transaction {
     return `${this.dateFormat()}|| ${this.render(this.credit)}|| || `;
   }
 
-  dateFormat() {
-    return moment(this.date).format("DD/MM/YYYY ");
-  }
+  dateFormat = () => moment(this.date).format("DD/MM/YYYY ");
 
-  render(item) {
-    if (item != null) return `${money.pounds(item)} `
-    else return "";
-  }
+  render = item => item != null ? `${money.pounds(item)} ` : "";
 }
 
 module.exports = Transaction;
