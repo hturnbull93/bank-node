@@ -210,17 +210,14 @@ The balance should probably be stored as pence, rather than as a float, but it n
 
 - Let `credit` in `deposit` be the amount passed multiplied by 100 (to get pence value).
 - Added `credit` to the balance.
-- let `displayCredit` assigned with parseFloat of credit / 100, toFixed 2 decimal places.
-- Similarly let `displayBalance` convert to 2 decimal places.
-- Then interpolate `displayCredit` and `displayBalance` into the returned string.
+- Then interpolate credit and balance into the returned string converted to two decimal placed with parseFloat of the value / 100, toFixed 2 decimal places.
 
 Green.
 
 Refactors:
 
-- Extracted the operations used in `displayCredit` and `displayBalance` to a separate method, `asPounds`.
-- Extracted the operation used to convert the amount to pence into a new method, `toPence`.
-- Moved the extracted methods to their own file, `src/conversion.js`.
+- Extracted the operations used to convert to two decimal places to a separate private helper method, `_asPounds`.
+- Extracted the operation used to convert the amount to pence into a new private helper method, `_toPence`.
 
 <!-- Links -->
 
