@@ -19,6 +19,7 @@ It allows you to create an account, deposit funds into it, withdraw funds from i
   - [Set up](#set-up)
   - [Deposits](#deposits)
   - [Withdrawals](#withdrawals)
+  - [Statement](#statement)
 
 ## Spec
 
@@ -79,6 +80,7 @@ Development:
 
 [Mocha] - Testing runner framework.
 [Chai] - Testing assertion/expectation library.
+[Sinon] - Testing spy/stub/mock library.
 
 ## Development Journal
 
@@ -104,13 +106,13 @@ CRC modelling:
 > So I can keep my money safe,  
 > I want to be able to deposit into my account
 
-- [ ] 3
+- [x] 3
 
 > As a Customer,  
 > So I can spend my money,  
 > I want to be able to withdraw from my account
 
-- [ ] 3.1
+- [x] 3.1
 
 > As a Bank Manager,  
 > So we don't go out of pocket,  
@@ -244,7 +246,7 @@ Wrote test for withdrawing 100 then 200 from an account with 1000, returned stri
 
 Green.
 
-- [ ] 3.1
+- [x] 3.1
 
 > As a Bank Manager,  
 > So we don't go out of pocket,  
@@ -254,8 +256,24 @@ Wrote test for withdrawing 1500 from an account with 1000, string returned shoul
 
 - Added guard clause to check if the amount to be withdrawn is greater than the current balance, if so return the string.
 
+Green.
+
+### Statement
+
+- [ ] 4
+
+> As a Customer,  
+> So I can keep on top of my finances,  
+> I want to be able to print my account statement
+
+The feature test I want to write needs to be able to have the date mocked. For this I will use [Sinon].
+
+Sinon is installed with `npm install --save-dev sinon`
+
+
 <!-- Links -->
 
 [source]: https://github.com/makersacademy/course/blob/master/individual_challenges/bank_tech_test.md
 [Mocha]: https://mochajs.org/
 [Chai]: https://www.chaijs.com/
+[Sinon]: https://sinonjs.org/
