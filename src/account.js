@@ -1,3 +1,5 @@
+const money = require('./money');
+
 class Account {
   constructor() {
     const STARTING_BALANCE = 0;
@@ -6,28 +8,20 @@ class Account {
   }
 
   deposit(amount) {
-    let credit = this._toPence(amount);
+    let credit = money.pence(amount);
     this.balance += credit;
-    let creditDisplay = this._asPounds(credit);
-    let balanceDisplay = this._asPounds(this.balance);
+    let creditDisplay = money.pounds(credit);
+    let balanceDisplay = money.pounds(this.balance);
     return `${creditDisplay} deposited. Current balance: ${balanceDisplay}`;
   }
 
   withdraw(amount) {
-    let debit = this._toPence(amount);
+    let debit = money.pence(amount);
     if (debit > this.balance) return "Insufficient funds";
     this.balance -= debit;
-    let debitDisplay = this._asPounds(debit);
-    let balanceDisplay = this._asPounds(this.balance);
+    let debitDisplay = money.pounds(debit);
+    let balanceDisplay = money.pounds(this.balance);
     return `${debitDisplay} withdrawn. Current balance: ${balanceDisplay}`;
-  }
-
-  _asPounds(pence) {
-    return parseFloat(pence / 100).toFixed(2);
-  }
-
-  _toPence(amount) {
-    return amount * 100;
   }
 }
 
