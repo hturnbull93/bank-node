@@ -1,5 +1,4 @@
 <!-- omit in toc -->
-
 # Bank - Node
 
 This is a small project to practice maintaining code quality and process. [Source]
@@ -9,23 +8,22 @@ I have also created a JavaScript implementation for the browser, [available here
 
 It allows you to create an account, deposit funds into it, withdraw funds from it, and print statements.
 
-- [Bank - Node](#bank---node)
-  - [Spec](#spec)
-    - [Requirements](#requirements)
-    - [Acceptance criteria](#acceptance-criteria)
-  - [Quick Start](#quick-start)
-  - [Screen Preview](#screen-preview)
-  - [Dependencies](#dependencies)
-  - [Development Journal](#development-journal)
-    - [Domain Modelling](#domain-modelling)
-    - [User Stories](#user-stories)
-    - [Set up](#set-up)
-    - [Deposits](#deposits)
-    - [Withdrawals](#withdrawals)
-    - [Statement](#statement)
-    - [Transactions](#transactions)
-    - [Back to the Statement](#back-to-the-statement)
-    - [Extracting a Printer](#extracting-a-printer)
+- [Spec](#spec)
+  - [Requirements](#requirements)
+  - [Acceptance criteria](#acceptance-criteria)
+- [Quick Start](#quick-start)
+- [Screen Preview](#screen-preview)
+- [Dependencies](#dependencies)
+- [Development Journal](#development-journal)
+  - [Domain Modelling](#domain-modelling)
+  - [User Stories](#user-stories)
+  - [Set up](#set-up)
+  - [Deposits](#deposits)
+  - [Withdrawals](#withdrawals)
+  - [Statement](#statement)
+  - [Transactions](#transactions)
+  - [Back to the Statement](#back-to-the-statement)
+  - [Extracting a Printer](#extracting-a-printer)
 
 ## Spec
 
