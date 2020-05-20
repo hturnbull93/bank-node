@@ -1,4 +1,5 @@
 <!-- omit in toc -->
+
 # Bank - Node
 
 This is a small project to practice maintaining code quality and process. [Source]
@@ -8,21 +9,23 @@ I have also created a JavaScript implementation for the browser, [available here
 
 It allows you to create an account, deposit funds into it, withdraw funds from it, and print statements.
 
-- [Spec](#spec)
-  - [Requirements](#requirements)
-  - [Acceptance criteria](#acceptance-criteria)
-- [Quick Start](#quick-start)
-- [Dependencies](#dependencies)
-- [Development Journal](#development-journal)
-  - [Domain Modelling](#domain-modelling)
-  - [User Stories](#user-stories)
-  - [Set up](#set-up)
-  - [Deposits](#deposits)
-  - [Withdrawals](#withdrawals)
-  - [Statement](#statement)
-  - [Transactions](#transactions)
-  - [Back to the Statement](#back-to-the-statement)
-  - [Extracting a Printer](#extracting-a-printer)
+- [Bank - Node](#bank---node)
+  - [Spec](#spec)
+    - [Requirements](#requirements)
+    - [Acceptance criteria](#acceptance-criteria)
+  - [Quick Start](#quick-start)
+  - [Screen Preview](#screen-preview)
+  - [Dependencies](#dependencies)
+  - [Development Journal](#development-journal)
+    - [Domain Modelling](#domain-modelling)
+    - [User Stories](#user-stories)
+    - [Set up](#set-up)
+    - [Deposits](#deposits)
+    - [Withdrawals](#withdrawals)
+    - [Statement](#statement)
+    - [Transactions](#transactions)
+    - [Back to the Statement](#back-to-the-statement)
+    - [Extracting a Printer](#extracting-a-printer)
 
 ## Spec
 
@@ -50,19 +53,38 @@ date || credit || debit || balance
 
 ## Quick Start
 
-Coming soon.
-<!--
 1. Clone this repo.
-2. Open `SpecRunner.html` in your browser.
-3. Inspect the tests.
-4. Open your browser console.
-5. Set up your account with:
+2. Install dependencies with:
 
-   ```js
-   let account = new Account()
+   ```shell
+   npm install
    ```
 
-6. Use the account with the following methods:
+3. Run tests with:
+
+   ```shell
+   npm test
+   ```
+
+4. Run the Node REP:
+
+   ```js
+   node
+   ```
+
+5. Require in `account.js` with:
+
+   ```js
+   const Account = require("./src/account.js")
+   ```
+
+6. Set up your account with:
+
+   ```js
+   let account = new Account();
+   ```
+
+7. Use the account with the following methods:
 
 | Method                     | Description                                                                                        |
 | -------------------------- | -------------------------------------------------------------------------------------------------- |
@@ -74,8 +96,7 @@ You should see something similar to the below:
 
 ## Screen Preview
 
-![Screen preview](images/jsconsole-bank.png)
- -->
+![Screen preview](images/bank-node-repl.png)
 
 ## Dependencies
 
@@ -126,7 +147,7 @@ CRC modelling:
 > So we don't go out of pocket,  
 > I want withdrawals to only be allowed to occur if the customer has sufficient funds
 
-- [ ] 4
+- [x] 4
 
 > As a Customer,  
 > So I can keep on top of my finances,  
@@ -150,13 +171,13 @@ CRC modelling:
 > So I know how much each withdrawal was,  
 > I want withdrawals on my statement to have the debit amount.
 
-- [ ] 4.4
+- [x] 4.4
 
 > As a Customer,  
 > So can keep track of my balance,  
 > I want transactions on my statement to have the balance amount after the transaction was completed.
 
-- [ ] 4.5
+- [x] 4.5
 
 > As a Customer,  
 > Because more recent transactions are more important to me,  
@@ -268,7 +289,7 @@ Green.
 
 ### Statement
 
-- [ ] 4
+- [x] 4
 
 > As a Customer,  
 > So I can keep on top of my finances,  
@@ -334,7 +355,7 @@ Wrote a test for constructing a transaction object passing in argument object wi
 - `constructor`'s argument obj also has a debit property, defaulting to null, assigned to `this.debit`.
 - `display` interpolates in the third column `render` of `this.debit`.
 
-- [ ] 4.4
+- [x] 4.4
 
 > As a Customer,  
 > So can keep track of my balance,  
@@ -384,11 +405,24 @@ Green.
 
 Wrote a test that `statement` calls `Printer.printStatement`. Red.
 
+- Extracted the constant and logic from the `statement` method into a new class, `Printer` in `src/printer.js`.
+- Its `printStatement` method takes any array of transactions, maps through them calling their `display` methods assigned to `rows`, then returns `STATEMENT_HEADER` concatenated with `rows` joined with newline characters.
+
+Green.
+
+Refactors:
+
+Rather than returning a concatenated string, the printer should log it to the console.
+
+- Adjusted the feature test to spy on `console`'s `log` method, expecting it to be called with the prepared `statement`.
+- `printStatement` console logs instead of returning.
+- `statement` no longer returns, it just calls `printer.printStatement`.
+
 <!-- Links -->
 
 [source]: https://github.com/makersacademy/course/blob/master/individual_challenges/bank_tech_test.md
-[Mocha]: https://mochajs.org/
-[Chai]: https://www.chaijs.com/
-[Sinon]: https://sinonjs.org/
-[Sinon-Chai]: https://www.chaijs.com/plugins/sinon-chai/
-[Moment]: https://momentjs.com/
+[mocha]: https://mochajs.org/
+[chai]: https://www.chaijs.com/
+[sinon]: https://sinonjs.org/
+[sinon-chai]: https://www.chaijs.com/plugins/sinon-chai/
+[moment]: https://momentjs.com/
