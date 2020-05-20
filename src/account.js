@@ -6,12 +6,16 @@ class Account {
   }
   deposit(amount) {
     let credit = this.toPence(amount);
-    this.balance += credit
+    this.balance += credit;
     return `${
-      parseFloat(credit / 100).toFixed(2)
+      this.asPounds(credit)
     } deposited. Current balance: ${
-      parseFloat(this.balance / 100).toFixed(2)
+      this.asPounds(this.balance)
     }`;
+  }
+
+  asPounds(pence) {
+    return parseFloat(pence / 100).toFixed(2);
   }
 
   toPence(amount) {
