@@ -1,12 +1,14 @@
 const money = require("./money");
 const Transaction = require("./transaction");
+const Printer = require("./printer");
 
 class Account {
-  constructor(transactionClass = Transaction) {
+  constructor(transactionClass = Transaction, printer = new Printer) {
     const STARTING_BALANCE = 0;
 
     this.balance = STARTING_BALANCE;
     this.transactionClass = transactionClass;
+    this.printer = printer;
     this.transactionHistory = [];
   }
 
@@ -31,11 +33,7 @@ class Account {
   }
 
   statement() {
-    const STATEMENT_HEADER = "date || credit || debit || balance \n";
-    let statementRows = this.transactionHistory.map((transaction) => {
-      return transaction.display();
-    });
-    return STATEMENT_HEADER + statementRows.join("\n")
+    return this.printer.printStatement(this.transactionHistory)
   }
 
   _addTransaction(argObj) {
