@@ -320,6 +320,16 @@ Refactors:
 - Converted `render` into a single line arrow function using a ternary operator.
 - Also refactored `dateFormat` into single line arrow function
 
+- [ ] 4.3
+
+> As a Customer,  
+> So I know how much each withdrawal was,  
+> I want withdrawals on my statement to have the debit amount.
+
+Wrote a test for constructing a transaction object with a credit value of null and second argument for debit, its `display` method should include the debit value in the third column of the returned string. Red.
+
+- `constructor`'s argument obj also has is debit property, defaulting to null, assigned to `this.debit`.
+- `display` interpolates in the third column `render` of `this.debit`.
 
 <!-- Links -->
 
