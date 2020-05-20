@@ -45,6 +45,14 @@ describe("Account", () => {
         "100.00 withdrawn. Current balance: 900.00"
       );
     });
+
+    it("reduces balance by 200 when passed 200", () => {
+      const account = accountWith1000Deposited();
+
+      expect(account.withdraw(200)).to.equal(
+        "200.00 withdrawn. Current balance: 800.00"
+      );
+    });
   });
 });
 
