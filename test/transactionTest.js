@@ -25,5 +25,16 @@ describe("Transaction", () => {
 
       clock.restore();
     });
+
+    it("has the credit amount in third column", () => {
+      let date = new Date(2020, 4, 19);
+      let clock = sinon.useFakeTimers(date);
+
+      const transaction = new Transaction({ debit: 10000 });
+
+      expect(transaction.display()).to.equal("19/05/2020 || || 100.00 || ");
+
+      clock.restore();
+    });
   });
 });
