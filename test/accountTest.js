@@ -39,8 +39,7 @@ describe("Account", () => {
 
   describe(".withdraw (account has 1000 deposited already)", () => {
     it("reduces balance by 100 when passed 100", () => {
-      let account = new Account();
-      account.deposit(1000);
+      const account = accountWith1000Deposited();
 
       expect(account.withdraw(100)).toEqual(
         "100.00 withdrawn. Current balance: 900.00"
@@ -48,3 +47,9 @@ describe("Account", () => {
     });
   });
 });
+
+function accountWith1000Deposited() {
+  let account = new Account();
+  account.deposit(1000);
+  return account;
+}
