@@ -16,6 +16,6 @@
     "sinon-chai": "^3.5.0"
   },
   "dependencies": {
-    "moment": "^2.26.0"
+    "moment": "^2.29.2"
   }
 }
